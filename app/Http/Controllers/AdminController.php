@@ -86,18 +86,6 @@ class AdminController extends Controller
         }
     }
 
-    private function _getStorageFilePath($fileContents)
-    {
-        $filename = time() . '.' . $fileContents->extension();
-        Storage::putFileAs('public', $fileContents,$filename);
-        
-        $fileUrl = Storage::url($filename);
-        return $fileUrl;
-    }
-
-
-
-
     //application crud
     public function application()
     {
@@ -166,5 +154,14 @@ class AdminController extends Controller
         {
             return redirect()->back()->with(['alart'=> 'danger','message'=>'Error while deleting category.']);
         }
+    }
+
+    private function _getStorageFilePath($fileContents)
+    {
+        $filename = time() . '.' . $fileContents->extension();
+        Storage::putFileAs('public', $fileContents,$filename);
+        
+        $fileUrl = Storage::url($filename);
+        return $fileUrl;
     }
 }

@@ -14,6 +14,8 @@
 Route::get('/', 'FrontController@index')->name('/');
 
 
+
+
 Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
 
     Route::get('/', function () {
@@ -37,6 +39,11 @@ Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
     Route::get('/delete-application/{id}','AdminController@deleteApplication')->name('admin-delete-application');
 
     
+    Route::group(['prefix'=>'products'], function(){
+        Route::get('/','ProductController@index')->name('admin-products');
+        Route::get('/create','ProductController@create')->name('admin-create-product');
+        Route::post('/create','ProductController@createPost')->name('admin-create-product');
+    });
     
 
     // Route::get('/register', function () {
