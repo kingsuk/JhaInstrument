@@ -5,29 +5,9 @@
                 
                 <div class="clearfix"></div>
             </div>
-            <img src="./images/shoe3.jpg" alt="...">
+            <img src="http://3.bp.blogspot.com/-mM5mDcia-yk/Tie4L4WhUzI/AAAAAAAAAM4/7x2SciqVQjk/w1200-h630-p-k-no-nu/Switched-Mode-Power-Supply-SMPS.jpg" alt="...">
         </div>
-        <div class="feel-fall">
-            <div class="container">
-                <div class="pull-left fal-box">
-                    <div class=" fall-left">
-                        <h3>Fall</h3>
-                        <img src="images/f-l.png" alt="/" class="img-responsive fl-img-wid">
-                        <p>Inspiration and innovation<br> for every athlete in the world</p>
-                        <span class="fel-fal-bar"></span>
-                    </div>
-                </div>
-                <div class="pull-right fel-box">
-                    <div class="feel-right">
-                        <h3>Feel</h3>
-                        <img src="images/f-r.png" alt="/" class="img-responsive fl-img-wid">
-                        <p>Inspiration and innovation<br> for every athlete in the world</p>
-                        <span class="fel-fal-bar2"></span>
-                    </div>
-                </div>
-            <div class="clearfix"></div>
-            </div>
-        </div>
+        
         <div class="shop-grid">
             <div class="container">
 
@@ -69,8 +49,9 @@
         
 
         <div class="container">
-        <div class="pull-right">
-        {{ $products->links() }}
+            <div class="pull-right">
+                {{ $products->links() }}
+            </div>
         </div>
-        </div>
+
 @endsection
