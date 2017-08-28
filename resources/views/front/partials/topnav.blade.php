@@ -1,13 +1,15 @@
+
 <div class="header">
             <div class="container">
                 <div class="header-top">
                     <div class="logo">
-                        <a href="index.html">N-AIR</a>
+                        <a href="{{route('/')}}">Jha Instrument</a>
                     </div>
                     <div class="login-bars">
-                        <a class="btn btn-default log-bar" href="register.html" role="button">Sign up</a>
-                        <a class="btn btn-default log-bar" href="signup.html" role="button">Login</a>
-                        <div class="cart box_1">
+                        <a class="btn btn-default log-bar" href="register.html" role="button">About Us</a>
+                        <a class="btn btn-default log-bar" href="register.html" role="button">Contact Us</a>
+                        
+                        <!-- <div class="cart box_1">
                             <a href="checkout.html">
                             <h3>
                                 <div class="total">
@@ -15,7 +17,7 @@
                             </a>
                             <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
                             <div class="clearfix"> </div>
-                        </div>	
+                        </div>	 -->
                     </div>
         <div class="clearfix"></div>
                 </div>
@@ -36,76 +38,80 @@
 
                         <div class="collapse navbar-collapse collapse-pdng" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav nav-font">
+                                
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop<b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="products.html">Shoes</a></li>
-                                        <li><a href="products.html">Tees</a></li>
-                                        <li><a href="products.html">Tops</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="products.html">Tracks</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="products.html">Gear</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men<b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
                                     <ul class="dropdown-menu multi-column columns-3">
                                         <div class="row">
                                             <div class="col-sm-4 menu-img-pad">
                                                 <ul class="multi-column-dropdown">
-                                                    <li><a href="products.html">Joggers</a></li>
-                                                    <li><a href="products.html">Foot Ball</a></li>
-                                                    <li><a href="products.html">Cricket</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="products.html">Tennis</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="products.html">Casual</a></li>
+                                                    @foreach (menuCategory() as $item)
+                                                    <li><a href="{{route('view-product-by-category-id',$item->id)}}">{{$item->name}}</a></li>
+                                                    
+                                                    @endforeach
                                                 </ul>
                                             </div>
+                                            @foreach (menuCategory() as $item)
                                             <div class="col-sm-4 menu-img-pad">
-                        <a href="#"><img src="images/menu1.jpg" alt="/" class="img-rsponsive men-img-wid" /></a>
+                                                <a href="{{route('view-product-by-category-id',$item->id)}}"><img src="{{$item->image1}}" alt="/" class="img-rsponsive men-img-wid" /></a>
+                                                <h4><a href="{{route('view-product-by-category-id',$item->id)}}">{{$item->name}}</a><h4>
                                             </div>
-                                            <div class="col-sm-4 menu-img-pad">
-                        <a href="#"><img src="images/menu2.jpg" alt="/" class="img-rsponsive men-img-wid" /></a>
-                                            </div>
+                                            
+                                            @endforeach
+                                            
                                         </div>
                                     </ul>
                                 </li>
+
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Women<b class="caret"></b></a>
-                                    <ul class="dropdown-menu multi-column columns-2">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Applications<b class="caret"></b></a>
+                                    <ul class="dropdown-menu multi-column columns-3">
                                         <div class="row">
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-4 menu-img-pad">
                                                 <ul class="multi-column-dropdown">
-                                                    <li><a href="products.html">Tops</a></li>
-                                                    <li><a href="products.html">Bottoms</a></li>
-                                                    <li><a href="products.html">Yoga Pants</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="products.html">Sports</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="products.html">Gym</a></li>
+                                                    @foreach (menuApplication() as $item)
+                                                    <li><a href="{{route('view-product-by-application-id',$item->id)}}">{{$item->name}}</a></li>
+                                                    
+                                                    @endforeach
                                                 </ul>
                                             </div>
-                                            <div class="col-sm-6">
-                        <a href="#"><img src="images/menu3.jpg" alt="/" class="img-rsponsive men-img-wid" /></a>
+                                            @foreach (menuApplication() as $item)
+                                            <div class="col-sm-4 menu-img-pad">
+                                                <a href="{{route('view-product-by-application-id',$item->id)}}"><img src="{{$item->image1}}" alt="/" class="img-rsponsive men-img-wid" /></a>
+                                                <h4><a href="{{route('view-product-by-application-id',$item->id)}}">{{$item->name}}</a><h4>
                                             </div>
+                                            
+                                            @endforeach
+                                            
                                         </div>
                                     </ul>
                                 </li>
+
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">kids<b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="products.html">Tees</a></li>
-                                        <li><a href="products.html">Shorts</a></li>
-                                        <li><a href="products.html">Gear</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="products.html">Watches</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="products.html">Shoes</a></li>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                                    <ul class="dropdown-menu multi-column columns-3">
+                                        <div class="row">
+                                            <div class="col-sm-4 menu-img-pad">
+                                                <ul class="multi-column-dropdown">
+                                                    @foreach (menuProduct() as $item)
+                                                    <li><a href="{{route('view-product-by-id',$item->id)}}">{{$item->name}}</a></li>
+                                                    
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                            @foreach (menuProduct() as $item)
+                                            <div class="col-sm-4 menu-img-pad">
+                                                <a href="{{route('view-product-by-id',$item->id)}}"><img src="{{$item->image1}}" alt="/" class="img-rsponsive men-img-wid" /></a>
+                                                <h4><a href="{{route('view-product-by-id',$item->id)}}">{{$item->name}}</a><h4>
+                                            </div>
+                                            
+                                            @endforeach
+                                            
+                                        </div>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Catch</a></li>
+                                
+                                
                                 <div class="clearfix"></div>
                             </ul>
                             <div class="clearfix"></div>

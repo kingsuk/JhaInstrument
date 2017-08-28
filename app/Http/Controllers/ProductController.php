@@ -13,8 +13,8 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-        $this->imageUrl = 'public/images';
-        $this->docUrl = 'public/docs';   
+        $this->imageUrl = 'public';
+        $this->docUrl = 'public';   
     }
 
     private function _getStorageFilePath($fielUrl,$fileContents)

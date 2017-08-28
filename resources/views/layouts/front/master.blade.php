@@ -26,8 +26,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!--default-js-->
 			<script src="{{asset('web/js/jquery-2.1.4.min.js')}}"></script>
 		<!--bootstrap-js-->
-			<script src="{{asset('web/js/bootstrap1.min.js')}}"></script>
+			<script src="{{asset('web/js/bootstrap.min.js')}}"></script>
 		<!--script-->
+
+		@yield('scripts')
     </head>
     <body>
     @include('front.partials.topnav')

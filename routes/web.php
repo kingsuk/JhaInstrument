@@ -12,6 +12,9 @@
 */
 
 Route::get('/', 'FrontController@index')->name('/');
+Route::get('/product/{id}','FrontController@viewProductById')->name('view-product-by-id');
+Route::get('/category/{id}','FrontController@viewProductByCategoryId')->name('view-product-by-category-id');
+Route::get('/application/{id}','FrontController@viewProductByApplicationId')->name('view-product-by-application-id');
 
 
 
